@@ -122,5 +122,8 @@
       }
     }
   },
-  "defaultProject": "AF-app"
+  "defaultProject": "AF-app",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }

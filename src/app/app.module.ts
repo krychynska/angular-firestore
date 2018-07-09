@@ -12,7 +12,7 @@ import {
   MatDialogModule,
   MatFormFieldModule,
   MatIconModule,
-  MatInputModule,
+  MatInputModule, MatSelectModule,
   MatToolbarModule
 } from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -27,13 +27,15 @@ import { environment } from '../environments/environment';
 
 import { LoginEffects } from './login/login.effects';
 import {EffectsModule} from '@ngrx/effects';
+import { SelectPermissionComponent } from './select-permission/select-permission.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    SelectPermissionComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -47,12 +49,13 @@ import {EffectsModule} from '@ngrx/effects';
     MatIconModule,
     MatButtonModule,
     MatFormFieldModule,
+    MatSelectModule,
     MatDialogModule,
     EffectsModule.forRoot([LoginEffects]),
     StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
-  entryComponents: [LoginComponent],
+  entryComponents: [LoginComponent, SelectPermissionComponent],
   providers: [AuthGuard, RolesGuard, LoginService],
   bootstrap: [AppComponent]
 })

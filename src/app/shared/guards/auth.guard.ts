@@ -17,7 +17,7 @@ export class AuthGuard implements CanActivate, CanLoad {
       this.store.dispatch(new LoginSuccessful({username: localStorage.getItem('username')}));
       return true;
     } else {
-      this.store.dispatch(new Authenticate());
+      this.store.dispatch(new Authenticate({url: state.url}));
       return false;
     }
   }

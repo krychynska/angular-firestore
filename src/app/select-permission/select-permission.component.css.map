@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACE,oBAAc;EACZ,KAAK,EAAE,IAAI;AAEb,iBAAY;EACV,aAAa,EAAE,IAAI",
+"sources": ["select-permission.component.scss"],
+"names": [],
+"file": "select-permission.component.css"
+}

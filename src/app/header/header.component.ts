@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit {
   }
 
   doLogout() {
-    this.store.dispatch(new DoLogout());
+    this.store.dispatch(new DoLogout({url: null}));
   }
 
 }

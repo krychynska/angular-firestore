@@ -1,0 +1,11 @@
+<mat-toolbar>Permissions</mat-toolbar>
+<mat-card-content>
+  <mat-form-field>
+    <mat-select placeholder="select permission" (selectionChange)="selectPermission($event.value)">
+      <mat-option *ngFor="let permission of (permissions$ | async)"
+                  [value]="permission">
+       {{permission.role}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-card-content>

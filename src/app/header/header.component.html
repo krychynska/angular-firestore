@@ -9,7 +9,8 @@
 
     <div fxLayout="row" fxLayoutAlign="space-around center">
       <section>
-        <button mat-mini-fab>
+        <span>{{username$ | async}}</span>
+        <button mat-mini-fab (click)="doLogout()">
           <mat-icon>exit_to_app</mat-icon>
         </button>
       </section>

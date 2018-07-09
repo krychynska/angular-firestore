@@ -18,3 +18,8 @@ export const reducers: ActionReducerMap<State> = {
 
 
 export const metaReducers: MetaReducer<State>[] = !environment.production ? [] : [];
+
+export const selectLoginState = createFeatureSelector<fromLogin.State>('login');
+export const selectUsername = createSelector(selectLoginState, fromLogin.getUsername);
+export const selectIsAuthenticated = createSelector(selectLoginState, fromLogin.getIsAuthenticated);
+

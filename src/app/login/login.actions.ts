@@ -23,7 +23,7 @@ export class Authenticate implements Action {
 export class DoLogin implements Action {
   readonly type = LoginActionTypes.DO_LOGIN;
 
-  constructor() {
+  constructor(public payload: { username: string }) {
 
   }
 }
@@ -31,7 +31,7 @@ export class DoLogin implements Action {
 export class LoginSuccessful implements Action {
   readonly type = LoginActionTypes.LOGIN_SUCCESSFUL;
 
-  constructor() {
+  constructor(public payload: { username: string }) {
   }
 }
 
@@ -78,7 +78,7 @@ export class GetPermissionsFailed implements Action {
   }
 }
 
-export type Action =
+export type LoginActions =
   Authenticate |
   DoLogin |
   DoLogout |

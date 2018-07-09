@@ -25,6 +25,9 @@ import { reducers, metaReducers } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 
+import { LoginEffects } from './login/login.effects';
+import {EffectsModule} from '@ngrx/effects';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +48,7 @@ import { environment } from '../environments/environment';
     MatButtonModule,
     MatFormFieldModule,
     MatDialogModule,
+    EffectsModule.forRoot([LoginEffects]),
     StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : []
   ],

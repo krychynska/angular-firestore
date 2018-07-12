@@ -10,7 +10,6 @@ export class FacultiesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log('fuck');
   }
 
 }

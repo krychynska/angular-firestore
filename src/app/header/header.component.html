@@ -2,9 +2,12 @@
   <div class="nav" fxLayout="row" fxLayoutAlign="space-between center" fxFlex="100">
     <!-- {{userInfo$ | async | json}} -->
     <div fxFlex="12" fxFlex.xs="10" fxFlex.sm="5">
-      <button color="accent" mat-mini-fab>
+      <button color="accent" mat-mini-fab (click)="goToHome()">
         <mat-icon>home</mat-icon>
       </button>
+
+      <a mat-button (click)="goToFaculties()">faculties</a>
+      <a mat-button (click)="goToStudents()">students</a>
     </div>
 
     <div fxLayout="row" fxLayoutAlign="space-around center">

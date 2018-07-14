@@ -14,7 +14,7 @@ export class AuthGuard implements CanActivate, CanLoad {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     if (localStorage.getItem('username')) {
-      this.store.dispatch(new LoginSuccessful({username: localStorage.getItem('username')}));
+      this.store.dispatch(new LoginSuccessful({username: localStorage.getItem('username'), url: state.url}));
       return true;
     } else {
       this.store.dispatch(new Authenticate({url: state.url}));

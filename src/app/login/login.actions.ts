@@ -42,7 +42,7 @@ export class DoLogin implements Action {
 export class LoginSuccessful implements Action {
   readonly type = LoginActionTypes.LOGIN_SUCCESSFUL;
 
-  constructor(public payload: { username: string }) {
+  constructor(public payload: { username: string, url?: string }) {
   }
 }
 

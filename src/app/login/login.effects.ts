@@ -79,10 +79,8 @@ export class LoginEffects {
     ofType(LoginActionTypes.PERMISSION_SELECTED),
     withLatestFrom(this.store.select(selectLoginState)),
     switchMap(([action, storeState]) => {
-      console.log(storeState, 'storeState');
       const urlTree = this.router.parseUrl(storeState.url ? storeState.url : '');
       urlTree.queryParams['role'] = storeState.selectedPermission.role;
-      console.log(urlTree, 'urlTree');
       this.router.navigateByUrl(urlTree);
       return of();
     })
@@ -92,7 +90,7 @@ export class LoginEffects {
   logout$ = this.actions$.pipe(
     ofType(LoginActionTypes.DO_LOGOUT),
     map((action: DoLogout) => action.payload),
-    switchMap((payload) => {
+    switchMap(() => {
       this.loginService.doLogout();
       return of(new LogoutDone());
     })

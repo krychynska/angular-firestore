@@ -26,6 +26,7 @@ export function reducer(state = initialState,  action: LoginActions): State {
       return {
         ...state,
         username: action.payload.username,
+        url: action.payload.url,
         isAuthenticated: true
       };
     }

@@ -1,7 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 import {Store} from '@ngrx/store';
-import {GetPermissions, PermissionSelected} from '../login/login.actions';
+import {PermissionSelected} from '../login/login.actions';
 import {Observable} from 'rxjs';
 import {Role} from '../shared/models/role';
 import {selectPermissions} from '../reducers';
@@ -24,7 +24,6 @@ export class SelectPermissionComponent implements OnInit {
   }
 
   selectPermission(role) {
-    console.log(role);
     this.store.dispatch(new PermissionSelected({selectedPermission: role}));
     this.dialogRef.close();
   }
